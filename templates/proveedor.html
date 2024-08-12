@@ -1,0 +1,46 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    PROVEEDOR
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <h4>Proveedor</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre_proveedor" class="form-content mb-2" placeholder="Nombre" required>
+                <input type="text" name="contacto" class="form-content mb-2" placeholder="Contacto" required>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <h4>Proveedores</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for proveedor in proveedores %}
+                    <tr>
+                        <td><a href="/proveedor">{{proveedor.nombre_proveedor}}</a></td> 
+                        <td><a href="/proveedor">{{proveedor.contacto}}</a></td>
+                        <td><a href="{{url_for('eliminar_proveedor', id=proveedor.id)}}">(Eliminar)</a></td>
+                        <td><a href="{{url_for('editar_proveedor', id=proveedor.id)}}">(Editar)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+    </div>
+</div>
+
+{% endblock %}

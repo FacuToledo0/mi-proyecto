@@ -1,0 +1,45 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    FABRICANTE
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h4>Fabricante</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre_fabricante" class="form-content mb-2" placeholder="Nombre" required>
+                <input type="text" name="pais_origen" class="form-content mb-2" placeholder="Pais" required>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <h4>Listado de fabricantes</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>País</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fabricante in fabricantes %}
+                    <tr>
+                        <td><a href="/fabricante">{{fabricante.nombre_fabricante}}</a></td>
+                        <td><a href="/fabricante"> {{fabricante.pais_origen}}</a></td>
+                        <td><a href="{{url_for('eliminar_fabricante', id=fabricante.id)}}">(Eliminar)</a></td>
+                        <td><a href="{{url_for('editar_fabricante', id=fabricante.id)}}">(Editar)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

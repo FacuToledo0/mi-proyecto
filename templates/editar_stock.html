@@ -1,0 +1,10 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Edite el Stock</h4>
+    <form action="" method="post">
+        <input type="text" name="cantidad_disponible" value="{{stocks.cantidad_disponible}}">
+        <input type="text" name="ubicacion_almacen" value="{{stocks.ubicacion_almacen}}">
+        <button type="submit">Editar</button>
+    </form>
+{% endblock %}

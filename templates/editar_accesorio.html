@@ -1,0 +1,10 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Edite los Accesorios</h4>
+    <form action="" method="post">
+        <input type="text" name="tipo_accesorio" value="{{accesorio.tipo_accesorio}}">
+        <input type="text" name="tipo_accesorio2" value="{{accesorio.tipo_accesorio2}}">
+        <button type="submit">Editar</button>
+    </form>
+{% endblock %}

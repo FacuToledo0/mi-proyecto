@@ -1,0 +1,46 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    STOCK
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <h4>Stock</h4>
+            <form action="" method="post">
+                <input type="number" name="cantidad_disponible" class="form-content mb-2" placeholder="Stock" required>
+                <input type="text" name="ubicacion_almacen" class="form-content mb-2" placeholder="Ubicación" required>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <h4>Stock Disponible</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Stock</th>
+                        <th>Ubicación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stock in stocks %}
+                    <tr>
+                        <td><a href="/stock">{{stock.cantidad_disponible}}</a></td> 
+                        <td><a href="/stock">{{stock.ubicacion_almacen}}</a></td>
+                        <td><a href="{{url_for('eliminar_stock', id=stock.id)}}">(Eliminar)</a></td>
+                        <td><a href="{{url_for('editar_stock', id=stock.id)}}">(Editar)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+    </div>
+</div>
+
+{% endblock %}

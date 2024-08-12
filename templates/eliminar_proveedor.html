@@ -1,0 +1,14 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    PROVEEDORES
+{% endblock %}
+
+{% block content %}
+    <h4>Elimine el Proveedor</h4>
+    <form action="" method="post">
+        <label><strong>{{proveedor.nombre_proveedor}}</strong></label>
+        <label><strong>{{proveedor.contacto}}</strong></label>
+        <button type="submit">Eliminar</button>
+    </form>
+{% endblock %}

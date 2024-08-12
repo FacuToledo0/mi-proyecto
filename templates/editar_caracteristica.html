@@ -1,0 +1,14 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Edite las Características</h4>
+    <form action="" method="post">
+        <input type="text" name="tamanio_pantalla" value="{{caracteristica.tamanio_pantalla}}">
+        <input type="text" name="capacidad_bateria" value="{{caracteristica.capacidad_bateria}}">
+        <input type="text" name="camara" value="{{caracteristica.camara}}">
+        <input type="text" name="memoria" value="{{caracteristica.memoria}}">
+        <input type="text" name="color" value="{{caracteristica.color}}">
+        <input type="text" name="descripcion" value="{{caracteristica.descripcion}}">
+        <button type="submit">Editar</button>
+    </form>
+{% endblock %}

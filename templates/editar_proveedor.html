@@ -1,0 +1,10 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Edite el Proveedor</h4>
+    <form action="" method="post">
+        <input type="text" name="nombre_proveedor" value="{{proveedor.nombre_proveedor}}">
+        <input type="text" name="contacto" value="{{proveedor.contacto}}">
+        <button type="submit">Editar</button>
+    </form>
+{% endblock %}

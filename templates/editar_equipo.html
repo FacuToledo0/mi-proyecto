@@ -1,0 +1,44 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Edite los Accesorios</h4>
+    <form action="" method="post">
+                <input type="text" name="costo" class="form-content mb-2" value="{{equipo.costo}}">
+                <select name="marca" id="" class="form-control mb-2">
+                    {% for marca in marcas %}
+                        <option value="{{marca.id}}">{{marca.nombre_categoria}}</option>
+                    {% endfor %}
+                </select>
+                <select name="modelo" id="" class="form-control mb-2">
+                    {% for modelo in modelos %}
+                        <option value="{{modelo.id}}">{{modelo.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <select name="nombre_fabricante" id="" class="form-control mb-2">
+                    {% for fabricante in fabricantes %}
+                        <option value="{{fabricante.id}}">{{fabricante.nombre_fabricante}}</option>
+                    {% endfor %}
+                </select>
+                <select name="nombre_proveedor" id="" class="form-control mb-2">
+                    {% for proveedor in proveedores  %}
+                        <option value="{{proveedor.id}}">{{proveedor.nombre_proveedor}}</option>
+                    {% endfor %}
+                </select>
+                <select name="cantidad_disponible" id="" class="form-control mb-2">
+                    {% for stock in stocks %}
+                        <option value="{{stock.id}}">{{stock.cantidad_disponible}}</option>
+                    {% endfor %}
+                </select>
+                <select name="color" id="" class="form-control mb-2">
+                    {% for caracteristica in caracteristicas  %}
+                        <option value="{{caracteristica.id}}">{{caracteristica.color}}</option>
+                    {% endfor %}
+                </select>
+                <select name="tipo_accesorio" id="" class="form-control mb-2">
+                    {% for accesorio in accesorios  %}
+                        <option value="{{accesorio.id}}">{{accesorio.tipo_accesorio}}</option>
+                    {% endfor %}
+                </select>
+        <button type="submit">Editar</button>
+    </form>
+{% endblock %}

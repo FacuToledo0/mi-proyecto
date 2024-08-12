@@ -1,0 +1,43 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    MODELO
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <h4>Crea un nuevo Modelo</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre" class="form-content mb-2" placeholder="Nombre del modelo" required>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+        
+        <div class="col-6">
+            <h4>Listado de modelos</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for modelo in modelos %}
+                    <tr>
+                        <td><a href="/modelo">{{modelo.nombre}}</a></td> 
+                        <td><a href="{{url_for('eliminar_modelo', id=modelo.id)}}">(Eliminar)</a></td>
+                        <td><a href="{{url_for('editar_modelo', id=modelo.id)}}">(Editar)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

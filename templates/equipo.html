@@ -1,0 +1,92 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    EQUIPO
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-3">
+            <h4>Crea un nuevo Equipo</h4>
+            <form action="" method="post">
+                <input type="text" name="costo" class="form-content mb-2" placeholder="Costo" required>
+                <select name="marca" id="" class="form-control mb-2">
+                    {% for marca in marcas %}
+                        <option value="{{marca.id}}">{{marca.nombre_categoria}}</option>
+                    {% endfor %}
+                </select>
+                <select name="modelo" id="" class="form-control mb-2">
+                    {% for modelo in modelos %}
+                        <option value="{{modelo.id}}">{{modelo.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <select name="nombre_fabricante" id="" class="form-control mb-2">
+                    {% for fabricante in fabricantes %}
+                        <option value="{{fabricante.id}}">{{fabricante.nombre_fabricante}}</option>
+                    {% endfor %}
+                </select>
+                <select name="nombre_proveedor" id="" class="form-control mb-2">
+                    {% for proveedor in proveedores  %}
+                        <option value="{{proveedor.id}}">{{proveedor.nombre_proveedor}}</option>
+                    {% endfor %}
+                </select>
+                <select name="cantidad_disponible" id="" class="form-control mb-2">
+                    {% for stock in stocks %}
+                        <option value="{{stock.id}}">{{stock.cantidad_disponible}}</option>
+                    {% endfor %}
+                </select>
+                <select name="color" id="" class="form-control mb-2">
+                    {% for caracteristica in caracteristicas  %}
+                        <option value="{{caracteristica.id}}">{{caracteristica.color}}</option>
+                    {% endfor %}
+                </select>
+                <select name="tipo_accesorio" id="" class="form-control mb-2">
+                    {% for accesorio in accesorios  %}
+                        <option value="{{accesorio.id}}">{{accesorio.tipo_accesorio}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+    
+        <div class="col-9">
+            <h4>Listado de Equipos</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Costo</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Fabricante</th>
+                        <th>Proveedor</th>
+                        <th>Cantidad</th>
+                        <th>Color</th>
+                        <th>Accesorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for equipo in equipos %}
+                    <tr>
+                        <td><a href="/equipo">{{equipo.costo}}</a></td>
+                        <td><a href="/equipo">{{equipo.marca}}</a></td>
+                        <td><a href="/equipo">{{equipo.modelo}}</a></td>
+                        <td><a href="/equipo">{{equipo.fabricante.nombre_fabricante}}</a></td>
+                        <td><a href="/equipo">{{equipo.proveedor.nombre_proveedor}}</a></td>
+                        <td><a href="/equipo">{{equipo.stock.cantidad_disponible}}</a></td>
+                        <td><a href="/equipo">{{equipo.caracteristica.color}}</a></td>
+                        <td><a href="/equipo">{{equipo.accesorio.tipo_accesorio}}</a></td>
+                        <td><a href="{{url_for('eliminar_equipo', id=equipo.id)}}">(Eliminar)</a></td> 
+                        <td><a href="{{url_for('editar_equipo', id=equipo.id)}}">(Editar)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>  
+
+    </div>
+</div>
+
+{% endblock %}

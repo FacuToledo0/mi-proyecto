@@ -1,0 +1,46 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    ACCESORIOS
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <h4>Accesorios</h4>
+            <form action="" method="post">
+                <input type="text" name="tipo_accesorio" class="form-content mb-2" placeholder="Tipo Accesorio" required>
+                <input type="text" name="tipo_accesorio2" class="form-content mb-2" placeholder="Tipo Accesorio" required>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <h4>Accesorios</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Accesorio 1</th>
+                        <th>Accesorio 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for accesorio in accesorios %}
+                    <tr>
+                        <td><a href="/accesorio">{{accesorio.tipo_accesorio}}</a></td> 
+                        <td><a href="/accesorio">{{accesorio.tipo_accesorio2}}</a></td>
+                        <td><a href="{{url_for('eliminar_accesorio', id=accesorio.id)}}">(Eliminar)</a></td> 
+                        <td><a href="{{url_for('editar_accesorio', id=accesorio.id)}}">(Editar)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+    </div>
+</div>
+
+{% endblock %}

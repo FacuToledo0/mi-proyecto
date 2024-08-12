@@ -1,0 +1,10 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Elimine el fabricante</h4>
+    <form action="" method="post">
+        <label><strong>{{fabricante.nombre_fabricante}}</strong></label>
+        <label><strong>{{fabricante.pais_origen}}</strong></label>
+        <button type="submit">Eliminar</button>
+    </form>
+{% endblock %}

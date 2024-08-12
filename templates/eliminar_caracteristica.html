@@ -1,0 +1,14 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Elimine las Características</h4>
+    <form action="" method="post">
+        <label><strong>{{caracteristica.tamanio_pantalla}}</strong></label>
+        <label><strong>{{caracteristica.capacidad_bateria}}</strong></label>
+        <label><strong>{{caracteristica.camara}}</strong></label>
+        <label><strong>{{caracteristica.memoria}}</strong></label>
+        <label><strong>{{caracteristica.color}}</strong></label>
+        <label><strong>{{caracteristica.descripcion}}</strong></label>
+        <button type="submit">Eliminar</button>
+    </form>
+{% endblock %}

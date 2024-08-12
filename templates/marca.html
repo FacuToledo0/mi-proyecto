@@ -1,0 +1,43 @@
+{% extends 'template_base.html' %}
+
+{% block title %}
+    MARCA
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            <h4>Marca</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre_categoria" class="form-content mb-2" placeholder="Marca" required>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <h4>Listado de marcas</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Marca</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for marca in marcas %}
+                    <tr>
+                        <td><a href="/marca">{{marca.nombre_categoria}}</a></td>
+                        <td><a href="{{url_for('eliminar_marcas', id=marca.id)}}">(Eliminar)</a></td> 
+                        <td><a href="{{url_for('editar_marcas', id=marca.id)}}">(Editar)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>  
+
+    </div>
+</div>
+
+{% endblock %}

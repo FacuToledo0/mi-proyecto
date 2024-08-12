@@ -1,0 +1,10 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Elimine el Stock</h4>
+    <form action="" method="post">
+        <label><strong>{{stocks.cantidad_disponible}}</strong></label>
+        <label><strong>{{stocks.ubicacion_almacen}}</strong></label>
+        <button type="submit">Eliminar</button>
+    </form>
+{% endblock %}

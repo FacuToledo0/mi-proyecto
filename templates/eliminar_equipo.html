@@ -1,0 +1,16 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+    <h4>Elimine el Equipo</h4>
+    <form action="" method="post">
+        <label><strong>{{equipo.costo}}</strong></label>
+        <label><strong>{{equipo.marca}}</strong></label>
+        <label><strong>{{equipo.modelo}}</strong></label>
+        <label><strong>{{equipo.fabricante.nombre_fabricante}}</strong></label>
+        <label><strong>{{equipo.proveedor.nombre_proveedor}}</strong></label>
+        <label><strong>{{equipo.stock.cantidad_disponible}}</strong></label>
+        <label><strong>{{equipo.caracteristica.color}}</strong></label>
+        <label><strong>{{equipo.accesorio.tipo_accesorio}}</strong></label>
+        <button type="submit">Eliminar</button>
+    </form>
+{% endblock %}
