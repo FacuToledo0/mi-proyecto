@@ -6,9 +6,6 @@ INSTALAR REQUERIMIENTOS
 
 pip install -r requirements.txt
 
-Instalar Flask, Flask-SQLAlchemy, Flask-Migrate y PyMySQL
-pip install Flask Flask-SQLAlchemy Flask-Migrate PyMySQL
-
 CREAR EL ENTORNO VIRTUAL
 
 python3 -m venv env
